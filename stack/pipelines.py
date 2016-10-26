@@ -1,4 +1,5 @@
 import pymongo
+import sys
 
 from scrapy.conf import settings
 from scrapy.exceptions import DropItem
@@ -20,7 +21,14 @@ class MongoDBPipeline(object):
         for data in item:
             if not data:
                 raise DropItem("Missing data!")
+        if not self.collection.find({'url': item['url']}).count() > 0:
+            file = open("newfile.txt", "a")
+            file.write(item['url'] + "\n")
+            file.close()
         self.collection.update({'url': item['url']}, dict(item), upsert=True)
         log.msg("Flat added to MongoDB database!",
                 level=log.DEBUG, spider=spider)
+        
+        
+        
         return item
