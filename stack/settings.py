@@ -18,9 +18,12 @@ ITEM_PIPELINES = {'stack.pipelines.MongoDBPipeline':300, }
 
 MONGODB_SERVER = "localhost"
 MONGODB_PORT = 27017
-MONGODB_DB = "vibbo"
+MONGODB_DB = "scrapy"
 MONGODB_COLLECTION = "pisos"
 MONGODB_UNIQ_KEY = 'url'
+
+
+CLOSESPIDER_ITEMCOUNT = 40
 #This tells Scrapy to wait at least 5 seconds between every new request it makes.
 #DOWNLOAD_DELAY = 5
 

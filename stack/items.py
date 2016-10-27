@@ -13,3 +13,4 @@ class StackItem(Item):
     images = Field()
     location = Field()
     postal_code = Field()
+    company = Field()

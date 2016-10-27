@@ -1,5 +1,4 @@
 import pymongo
-import sys
 
 from scrapy.conf import settings
 from scrapy.exceptions import DropItem
@@ -9,7 +8,6 @@ from scrapy import log
 class MongoDBPipeline(object):
 
     def __init__(self):
-        log.msg("***********************")
         connection = pymongo.MongoClient(
             settings['MONGODB_SERVER'],
             settings['MONGODB_PORT']
@@ -28,7 +26,5 @@ class MongoDBPipeline(object):
         self.collection.update({'url': item['url']}, dict(item), upsert=True)
         log.msg("Flat added to MongoDB database!",
                 level=log.DEBUG, spider=spider)
-        
-        
         
         return item
