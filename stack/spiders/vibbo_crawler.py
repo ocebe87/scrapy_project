@@ -18,17 +18,17 @@ class VibboCrawlerSpider(CrawlSpider):
 
     def parse_items(self, response):
         item = StackItem()
-        item["title"] = response.xpath('//*[@id="main"]/div[1]/div/div[4]/div/div[1]/h1/text()').extract()[0].strip()
-        item["url"] = response.url
-        item["price"] = re.sub(r'[^\w]', '',response.xpath('//*[@id="main"]/div[1]/div/div[4]/div/div[1]/div/div/div[1]/span/text()').extract()[0].strip())
+        item["company"]     = 'vibbo'
+        item["url"]         = response.url
+        item["title"]       = response.xpath('//*[@id="main"]/div[1]/div/div[4]/div/div[1]/h1/text()').extract()[0].strip()
+        item["price"]       = re.sub(r'[^\w]', '',response.xpath('//*[@id="main"]/div[1]/div/div[4]/div/div[1]/div/div/div[1]/span/text()').extract()[0].strip())
         item["update_date"] = response.xpath('//*[@id="main"]/div[1]/div/div[5]/div/div[3]/div/text()').extract()[0].strip()
-        item["features"] = map(unicode.strip,response.xpath('//*[@id="main"]/div[1]/div/div[5]/div/div[2]/ul/li/text()').extract())
+        item["features"]    = map(unicode.strip,response.xpath('//*[@id="main"]/div[1]/div/div[5]/div/div[2]/ul/li/text()').extract())
         item["description"] = response.xpath('//*[@id="descriptionText"]/text()').extract()[1]
-        item["rooms"] = response.xpath('//*[@id="main"]/div[1]/div/div[5]/div/div[1]/div[1]/span/b/text()').extract()[0].strip()
-        item["surface"] = response.xpath('//*[@id="main"]/div[1]/div/div[5]/div/div[1]/div[2]/span/b/text()').extract()[0].strip()
-        item["images"] = response.xpath('//*[@id="slides"]//@src').extract()
-        item["location"] = response.xpath('//*[@id="main"]/div[1]/div/div[4]/div/div[3]/div[1]/span[2]/text()').extract()[0].strip()
+        item["rooms"]       = response.xpath('//*[@id="main"]/div[1]/div/div[5]/div/div[1]/div[1]/span/b/text()').extract()[0].strip()
+        item["surface"]     = response.xpath('//*[@id="main"]/div[1]/div/div[5]/div/div[1]/div[2]/span/b/text()').extract()[0].strip()
+        item["images"]      = response.xpath('//*[@id="slides"]//@src').extract()
+        item["location"]    = response.xpath('//*[@id="main"]/div[1]/div/div[4]/div/div[3]/div[1]/span[2]/text()').extract()[0].strip()
         item["postal_code"] = response.xpath('//*[@id="main"]/div[1]/div/div[4]/div/div[3]/div[1]/span[3]/text()').extract()[0].strip()
-        #items.append(item)
         
         yield item
