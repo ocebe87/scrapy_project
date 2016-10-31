@@ -7,7 +7,7 @@ from stack.items import StackItem
 
 
 class VibboCrawlerSpider(CrawlSpider):
-    name = 'habitaclia_crawler'
+    name = 'habitaclia'
     allowed_domains = ['habitaclia.com']
     start_urls = ['http://www.habitaclia.com/alquiler-barcelona.htm?tip_op_origen=A&pmax=900&m2=0&st=piso-estudio-apartamento-planta_baja-loft-duplex-triplex-atico-casa-torre-masia-casa_pareada-casa_adosada-chalet&hab=99&bolIsFiltro=1&hUserClickFilterButton=true&filtro_periodo=0&hMinLat=&hMinLon=&hMaxLat=&hMaxLon=&hUseLatLonFilters=&hNumPointsMapa=&ordenar=fec_mod_desc']
 

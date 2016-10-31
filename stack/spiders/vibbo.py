@@ -7,7 +7,7 @@ from stack.items import StackItem
 
 
 class VibboCrawlerSpider(CrawlSpider):
-    name = 'vibbo_crawler'
+    name = 'vibbo'
     allowed_domains = ['vibbo.com']
     start_urls = ['http://www.vibbo.com/alquiler-de-pisos-barcelona-capital-particulares/?ca=8_s&m=8019&a=31&pe=900&fPos=210&fOn=sb_f_input']
 

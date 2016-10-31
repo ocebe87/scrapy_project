@@ -1,13 +1,14 @@
 import scrapy
-import re
+
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
 
 from stack.items import StackItem
+from helper import *
 
 
 class VibboCrawlerSpider(CrawlSpider):
-    name = 'en_alquiler_crawler'
+    name = 'enAlquiler'
     allowed_domains = ['enalquiler.com']
     start_urls = ['http://www.enalquiler.com/search?provincia=9&poblacion=4596&precio_max=900&tipo_usuario=1']
 
@@ -36,8 +37,7 @@ class VibboCrawlerSpider(CrawlSpider):
         item["description"] = ''.join(response.xpath('//*[@id="description"]/text()').extract()).strip()
         
         yield item
-        
-   
+  
     def format_xpath(self, response, xpath):
         res = response.xpath(xpath)
         return res.extract()[0].strip() if res else ""
