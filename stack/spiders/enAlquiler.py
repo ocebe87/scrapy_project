@@ -4,7 +4,6 @@ from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
 
 from stack.items import StackItem
-from helper import *
 
 
 class VibboCrawlerSpider(CrawlSpider):
