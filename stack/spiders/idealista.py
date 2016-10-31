@@ -18,7 +18,7 @@ class VibboCrawlerSpider(CrawlSpider):
         
     def parse_items(self, response):
         item = StackItem()
-        item["company"]     = 'pisos'
+        item["company"]     = 'idealista'
         item["url"]         = response.url
         #item["title"]       = self.format_xpath(response, '//*[@id="dvTitulo"]/div[1]/h1/text()')
         #item["price"]       = self.format_xpath(response, '//*[@id="dvTitulo"]/div[2]/div[1]/div/div/span/text()').split()[0]
