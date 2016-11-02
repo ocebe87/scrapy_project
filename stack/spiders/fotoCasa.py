@@ -34,4 +34,4 @@ class VibboCrawlerSpider(CrawlSpider):
    
     def format_xpath(self, response, xpath):
         res = response.xpath(xpath)
-        return res.extract()[0].strip() if res else ""
+        return res.extract()[0].encode('utf-8').strip() if res else ""
