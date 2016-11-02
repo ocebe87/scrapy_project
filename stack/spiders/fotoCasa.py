@@ -9,7 +9,7 @@ from stack.items import StackItem
 class VibboCrawlerSpider(CrawlSpider):
     name = 'fotoCasa'
     allowed_domains = ['fotocasa.es']
-    start_urls = ['http://www.fotocasa.es/alquiler/casas/barcelona-capital/listado-por-foto?crp=1&ts=barcelona%20capital&llm=724,9,8,232,376,8019,0,0,0&minp=0&maxp=800&opi=36&ftg=false&pgg=false&odg=false&fav=false&grad=false&fss=true&mode=1&cu=es-es&pbti=2&nhtti=3&craap=1&fss=true&fs=false']
+    start_urls = ['http://www.fotocasa.es/alquiler/casas/barcelona-capital/listado-por-foto?crp=1&ts=barcelona%20capital&llm=724,9,8,232,376,8019,0,0,0&maxp=800&f=publicationdate&o=desc&opi=36&ftg=true&pgg=false&odg=false&fav=false&grad=false&fss=false&mode=1&cu=es-es&pbti=2&nhtti=3&craap=1&fs=false&fav=false']
 
     rules = (
         #Rule (LinkExtractor(restrict_xpaths='//*[@id="body"]/div[6]/div/div[1]/div[3]/ul/li[3]/span'), follow= True),
