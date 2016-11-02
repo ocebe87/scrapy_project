@@ -22,7 +22,7 @@ class MongoDBPipeline(object):
         if not self.collection.find({'url': item['url']}).count() > 0:
             file = open("newfile.txt", "a")
             file.write("<br><a class='texto'>"+ item['company'] +" </a>"+ "\n")
-            file.write("<br><a class='texto'>"+ item['price'] +"Euros -- "+ item['title'] +"</a>"+ "\n")
+            #file.write("<br><a class='texto'>"+ item['price'] +"Euros -- "+ item['title'] +"</a>"+ "\n")
             file.write("<br><a class='texto' href=" + item['url'] + ">---> al anuncio <---</a><br>"+ "\n")
             #file.write(item['url'] + "\n")
             file.close()
