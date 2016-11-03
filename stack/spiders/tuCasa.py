@@ -9,7 +9,7 @@ from stack.items import StackItem
 class VibboCrawlerSpider(CrawlSpider):
     name = 'tuCasa'
     allowed_domains = ['tucasa.com']
-    start_urls = ['http://www.tucasa.com/alquiler/viviendas/barcelona/barcelona-capital/?r=&idz=0008.0001.9999.0001&p2=900&ord=&pgn=1']
+    start_urls = ['http://www.tucasa.com/alquiler/viviendas/barcelona/barcelona/?r=&idz=0008.0001.9999.0001&p1=600&p2=900']
 
     rules = (
         Rule (LinkExtractor(restrict_xpaths='//*[@id="container-tipo-listado"]/div[1]/div[24]/ul/li[11]/a'), follow= True),
