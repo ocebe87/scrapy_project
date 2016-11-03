@@ -26,6 +26,7 @@ class VibboCrawlerSpider(CrawlSpider):
         item["title"]       = self.format_xpath(response, '//*[@id="property-title"]/h1/text()')
         item["price"]       = self.format_xpath(response, '//*[@id="priceContainer"]/text()').split()[0]
         item["description"] = self.format_xpath(response, '//*[@id="ctl00_ddDescription"]/div[2]/p/text()')
+        item["detailReference"] = self.format_xpath(response, '//*[@id="detailReference"]/text()').split()[2]
         #item["location"]    = self.format_xpath(response, '/html/body/div[5]/span/text()')
         #item["update_date"] = self.format_xpath(response, '//*[@class="gray-light size12"]/text()').split()[2]
         

@@ -14,3 +14,4 @@ class StackItem(Item):
     location = Field()
     postal_code = Field()
     company = Field()
+    detailReference = Field()
