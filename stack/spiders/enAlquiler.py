@@ -28,7 +28,7 @@ class VibboCrawlerSpider(CrawlSpider):
         item["company"]     = 'enAlquiler'
         item["url"]         = response.url
         item["title"]       = self.format_xpath(response, '//*[@class="detail-name"]/text()')
-        item["price"]       = self.format_xpath(response, '//*[@class="detail-price"]/text()')[:-1]
+        item["price"]       = self.format_xpath(response, '//*[@class="detail-price"]/text()')[:-3]
         #item["price"]       = '---'
         item["update_date"] = self.format_xpath(response, '//*[@class="gray-light size12"]/text()').split()[2]
         item["rooms"]       = self.format_xpath(response, '//*[@class="detail-rooms"]/text()').split()[0]
